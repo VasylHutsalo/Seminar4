@@ -45,7 +45,7 @@ Console.WriteLine(" Сумма цифр числа  " + volN + " равна " + 
 */
 
 //Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-
+/*
 void Newarray(int[] mass)
 {
     int length = mass.Length;
@@ -71,4 +71,113 @@ void PrintArray(int[] massiv)
 int[] array = new int[8];
 Newarray(array);
 PrintArray(array);
+*/
+
+// Домашнее задание № 5
+
+
+//Задать массив заполненный положительными 3х значными числами.написать программу 
+//показывающую кол-во положительных чиселю/
+
+ void Newarray(int[] mass)
+{
+for(int i = 0; i < mass.Length; i++ )
+{
+mass[i] = new Random().Next(100, 1000);
+Console.WriteLine(mass[i]);
+}
+}
+
+ void CountPol(int[] mass)
+{
+  int count = 0;
+  for(int i = 0; i < mass.Length; i++)
+  {
+    if( mass[i] % 2 == 0)
+    {
+      count++;
+    }
+  }
+  Console.WriteLine(" Количество четных чисел " + count);
+}
+int[] array = new int [8];// Код задания одномерного массива
+Newarray(array);
+CountPol(array);
+
+
+    
+
+//Задайте одномерный массив, заполненный случайными числами.
+// Найдите сумму элементов, стоящих на нечётных позициях.
+/*
+void Newarray(int[] mass)
+{
+    for (int i = 0; i < mass.Length; i++)
+    {
+        mass[i] = new Random().Next(1, 9);
+        Console.WriteLine(mass[i]);
+    }
+}
+
+void SumNechet(int[] mass)
+{
+    int summa = 0;
+    for (int i = 1; i < mass.Length; i = i + 2)
+    {
+        summa = summa + mass[i];
+    }
+    Console.WriteLine(" Сумма чисел стоящих на нечетных позициях " + summa);
+}
+
+int[] array = new int[7];
+Console.WriteLine();
+Newarray(array);
+SumNechet(array);
+*/
+
+//  Задайте массив вещественных чисел.
+//Найдите разницу между максимальным и минимальным элементов массива.
+
+
+void Filarray(double[] massiv)
+{
+    for (int i = 0; i < massiv.Length; i++)
+    {
+        massiv[i] = new Random().Next(0, 10);
+        Console.Write(massiv[i] + " ");
+    }
+}
+
+void RezMaxMin(double[] massiv)
+{
+    double min = massiv[0];
+    double max = massiv[0];
+
+    for (int i = 1; i < (massiv.Length); i++)
+    {
+        if (massiv[i] < min)
+        {
+            min = massiv[i];
+        }
+    }
+    for (int j = 1; j < massiv.Length; j++)
+    {
+        if (massiv[j] > max)
+        {
+            max = massiv[j];
+        }
+    }
+    double rezalt = max - min;
+
+    Console.WriteLine($"Разность { rezalt} = {max} - {min}");
+}
+
+double[] Mass = new double[5];
+Console.WriteLine();
+
+Filarray(Mass);
+RezMaxMin(Mass);
+
+
+
 
