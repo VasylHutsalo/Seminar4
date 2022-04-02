@@ -137,7 +137,7 @@ SumNechet(array);
 
 //  Задайте массив вещественных чисел.
 //Найдите разницу между максимальным и минимальным элементов массива.
-
+/*
 
 void Filarray(double[] massiv)
 {
@@ -177,6 +177,72 @@ Console.WriteLine();
 
 Filarray(Mass);
 RezMaxMin(Mass);
+*/
+
+//Домашнее задание №6
+
+// Задача № 1.Пользователь вводит с клавиатуры M чисел.
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+/*
+Console.Write(" Задайте колличество элементов М =  ");
+int m = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[m];
+for (int i = 0; i < m; i++)
+{
+    array[i] = new Random().Next(-10, 10);
+    Console.Write(array[i] + " ");
+}
+void Positiv(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0)
+        {
+            count++;
+        }
+    }
+    Console.Write(" Колличество положительных элементов = " + count);
+}
+Positiv(array);
+*/
+
+// Задача № 2.  Пользователь вводит с клавиатуры кол-во строк и столбцов для массива. 
+//Вывести массив в виде матрицы, создав "рамку" 
+//из единиц, а внутреннюю зону матрицы заполнить нулями.
+/*
+void Filarray(int[,] matr)
+{
+    int lengthI = matr.GetLength(0);
+    int lengthJ = matr.GetLength(1);
+    for (int i = 0; i < lengthI; i++)
+    {
+        matr[i, 0] = 1;
+        matr[i, lengthJ - 1] = 1;
+
+        for (int j = 0; j < lengthJ; j++)
+        {
+            matr[0, j] = 1;
+            matr[lengthI - 1, j] = 1;
+
+            Console.Write(matr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+Console.Write(" Введите число строк n =  ");
+int n =Convert.ToInt32(Console.ReadLine());
+Console.Write(" Введите число столбцов m =  ");
+int m =Convert.ToInt32(Console.ReadLine());
+
+int[,] matrix = new int[n, m];
+Filarray(matrix);
+*/
+
+
+
+
+
 
 
 
