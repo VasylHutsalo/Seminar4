@@ -239,7 +239,117 @@ int[,] matrix = new int[n, m];
 Filarray(matrix);
 */
 
+// Домашнее задание №7
+//. Задача №1. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+/*
 
+void Filarray(double[,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i, j] = new Random().Next(-100, 100) / 10.0;
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+double[,] matrix = new double[3, 4];
+Filarray(matrix);
+*/
+
+//Задача №2. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+/*
+void Filarray(int[,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i, j] = new Random().Next(0, 10);
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,] matrix = new int[3, 4];
+Filarray(matrix);
+
+Console.Write(" Введите поз. строки m =  ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write(" Введите поз. столбца n =  ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+void FindVelue(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (i == m && j == n)
+            {
+                Console.WriteLine(" Значение = " + matrix[m, n]);
+                break;
+            }
+            if (m > matrix.GetLength(0) || n > matrix.GetLength(1))
+            {
+                Console.WriteLine(" Такого числа нет ");
+                break;
+            }
+        }
+    }
+}
+
+FindVelue(matrix);
+
+*/
+
+// Задача №3. Задайте двумерный массив из целых чисел.
+// Найдите среднее арифметическое элементов в каждом столбце.
+/*
+void Filarray(int[,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i, j] = new Random().Next(0, 10);
+            Console.Write($"{matr[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+Console.Write(" Введите кол-во строк n =  ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write(" Введите кол-во столбцов m =  ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+void SumColumn(int[,] matrix)//Метод нахождения суммы элементов столбцов
+{
+    int[] ColSum = new int[m];
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {
+        ColSum[j] = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            ColSum[j] += matrix[i, j];
+        }
+        Console.WriteLine(ColSum[j]);
+        double num = ColSum[j] / (m + 0.0);
+        string rezalt = String.Format("{0:f}", ColSum[j] / (m + 0.0));
+        Console.WriteLine(rezalt);
+    }
+}
+
+
+int[,] matrix = new int[n, m];//
+Filarray(matrix);
+SumColumn(matrix);
+
+*/
 
 
 
